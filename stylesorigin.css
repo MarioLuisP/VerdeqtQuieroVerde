@@ -1,0 +1,547 @@
+/* General Header Styling */
+header {
+    background-color: #3a5045; /* Color de fondo del header */
+    padding: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo-container .logo {
+    width: 50px;
+    height: auto;
+}
+
+.brand-name {
+    font-family: 'Georgia', serif;
+    font-size: 30px;
+    font-weight: bold;
+    color: #efebd9; /* Color del texto principal */
+    text-transform: uppercase;
+}
+
+/* Desktop Menu Styling */
+.desktop-menu ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.desktop-menu ul li {
+    display: inline;
+}
+
+.desktop-menu ul li a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    color: #a8bd98; /* Color del texto del menú */
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.desktop-menu ul li a:hover {
+    background-color: #638664;
+    color: #f9f9f4;
+}
+
+/* Mobile Menu Icon */
+.menu-icon {
+    display: none;
+    font-size: 24px;
+    color: #efebd9;
+    cursor: pointer;
+}
+
+/* Mobile Menu */
+.menu {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background-color: #3a5045;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.menu ul {
+    list-style: none;
+    padding: 10px;
+}
+
+.menu ul li {
+    padding: 10px 15px;
+    border-bottom: 1px solid #688f77;
+}
+
+.menu ul li:last-child {
+    border-bottom: none;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: #a6988a;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.menu ul li a:hover {
+    color: #dc6c84;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .desktop-menu {
+        display: none;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .menu {
+        display: none;
+    }
+}
+/* General Footer Styling */
+footer {
+    background-color: #3a5045; /* Color de fondo del footer */
+    color: #efebd9; /* Color del texto */
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1900px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-info, .footer-nav, .footer-social {
+    flex: 1;
+    min-width: 250px;
+    text-align: left;
+}
+
+.footer-info h3 {
+    font-size: 22px;
+    color: #a8bd98;
+}
+
+.footer-info p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #d2c5bc;
+}
+
+.footer-nav h4, .footer-social h4 {
+    font-size: 18px;
+    color: #a6988a;
+    margin-bottom: 10px;
+}
+
+.footer-nav a {
+    display: block;
+    color: #a8bd98;
+    text-decoration: none;
+    margin-bottom: 5px;
+    transition: color 0.3s;
+}
+
+.footer-nav a:hover {
+    color: #c2e8f1;
+}
+
+.footer-social .social-links a {
+    display: inline-block;
+    font-size: 20px;
+    color: #a8bd98;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.footer-social .social-links a:hover {
+    color: #d5ebeb;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #dbdcc4;
+    border-top: 1px solid #688f77;
+    padding-top: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-info, .footer-nav, .footer-social {
+        text-align: center;
+    }
+
+    .footer-nav a {
+        display: inline-block;
+        margin: 5px 10px;
+    }
+}
+ /* Estilos generales */
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: #6e6a66;
+}
+
+body {
+    overflow-x: hidden;
+    color: #ffffff;
+}
+
+.container {
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 1. Carrusel */
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+    margin-bottom: 80px;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+    height: 100%;
+}
+
+.carousel-item {
+    min-width: 100%;
+    height: 100%;
+    display: flex;
+    position: relative;
+}
+
+.carousel-image {
+    width: 66.7%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-text {
+    width: 33.3%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+    background-color: #f8f9fa;
+}
+
+.carousel-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: 300;
+}
+
+.carousel-text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #6c757d;
+}
+
+.carousel-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background-color: white;
+}
+
+/* 2. Título ancho 100% */
+.section-title-container {
+    margin: 120px 0 80px;
+    text-align: center;
+}
+
+.small-subtitle {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #adb5bd;
+    margin-bottom: 15px;
+}
+
+.main-title {
+    font-size: 3.5rem;
+    font-weight: 200;
+    color: #426964;
+    line-height: 1.2;
+}
+
+/* 3. 4 fotos 100% */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 100px;
+}
+
+.gallery-item {
+    position: relative;
+}
+
+.gallery-image {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery-caption {
+    margin-top: 15px;
+    font-size: 0.95rem;
+    color: #495057;
+    text-align: center;
+}
+
+/* 4. Imagen 100% con texto */
+.feature-section {
+    margin: 100px 0;
+    position: relative;
+}
+
+.feature-line {
+    width: 100%;
+    height: 1px;
+    background-color: #dee2e6;
+}
+
+.feature-container {
+    display: flex;
+    margin: 30px 0;
+}
+
+.feature-image {
+    width: 66.7%;
+    height: 500px;
+    object-fit: cover;
+}
+
+.feature-text {
+    width: 33.3%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+    background-color: #f8f9fa;
+}
+
+.feature-text h2 {
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+    font-weight: 300;
+}
+
+.feature-text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #6c757d;
+}
+
+/* 5. 3 títulos escalonados */
+.stepped-titles {
+    margin: 120px 0;
+    position: relative;
+}
+
+.title-step {
+    padding: 20px 0;
+}
+
+.step-1 {
+padding-left: 0;
+}
+
+.step-2 {
+padding-left: 300px;
+}
+
+.step-3 {
+padding-left: 600px;
+}
+
+.title-step h3 {
+    font-size: 2rem;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+
+.title-step p {
+    font-size: 1.1rem;
+    color: #6c757d;
+    line-height: 1.5;
+}
+
+.divider {
+    width: 80%;
+    height: 1px;
+    background-color: #dee2e6;
+    margin: 30px auto;
+}
+
+/* 6. Foto con texto al scroll */
+.parallax-section {
+    position: relative;
+    height: 600px;
+    margin-bottom: 100px;
+    overflow: hidden;
+}
+
+.parallax-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.parallax-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    opacity: 0; /* Comienza invisible */
+    transition: opacity 0.8s ease; /* Transición suave */
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 40px;
+    border-radius: 4px;
+    width: 80%;
+    max-width: 800px;
+}
+
+.parallax-text h2 {
+    font-size: 3rem;
+    font-weight: 200;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.parallax-text p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: white;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+    .step-1, .step-2, .step-3 {
+padding-left: 0;
+}
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .carousel-item, .feature-container {
+        flex-direction: column;
+    }
+    
+    .carousel-image, .carousel-text, .feature-image, .feature-text {
+        width: 100%;
+        height: auto;
+    }
+    
+    .carousel {
+        height: auto;
+    }
+    
+    .carousel-item {
+        height: auto;
+    }
+    
+    .title-step:nth-child(1), .title-step:nth-child(2), .title-step:nth-child(3) {
+        padding-left: 0;
+    }
+}
+
+/* Ajustes responsive para el texto del parallax */
+@media (max-width: 768px) {
+.parallax-text {
+width: 90%;
+padding: 25px;
+}
+
+.parallax-text h2 {
+font-size: 2rem;
+margin-bottom: 15px;
+}
+
+.parallax-text p {
+font-size: 1rem;
+line-height: 1.5;
+}
+}
+@media (max-width: 576px) {
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+    
+    .main-title {
+        font-size: 2.5rem;
+    }
+}
+@media (max-width: 480px) {
+.parallax-text {
+width: 95%;
+padding: 20px;
+}
+
+.parallax-text h2 {
+font-size: 1.5rem;
+margin-bottom: 10px;
+}
+
+.parallax-text p {
+font-size: 0.9rem;
+line-height: 1.4;
+}
+}
