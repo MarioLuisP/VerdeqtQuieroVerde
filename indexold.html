@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Verde qt quiero</title>
-    <!-- Favicon added here -->
     <link rel="icon" href="https://res.cloudinary.com/dloaaxni6/image/upload/v1742515352/final_final_cactus3_pbhsl0.jpg" type="image/jpeg">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -53,6 +52,33 @@
             </ul>
         </div>
     </header>
+
+    <script>
+        // Menú móvil
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        menuToggle.addEventListener('click', function() {
+            mobileMenu.classList.toggle('active');
+            // Removed the code that changes the icon to X
+        });
+         
+        // Cierra el menú al hacer clic en un enlace
+        const menuLinks = mobileMenu.querySelectorAll('a');
+        menuLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenu.classList.remove('active');
+            });
+        });
+        
+        // Cierra el menú al hacer clic fuera de él
+        document.addEventListener('click', function(event) {
+            if (!mobileMenu.contains(event.target) && !menuToggle.contains(event.target)) {
+                mobileMenu.classList.remove('active');
+            }
+        });
+    </script>
+
     <main>
         <!-- 1. Carrusel con tres imágenes mejorado -->
         <section class="carousel-section">
@@ -91,6 +117,7 @@
                 </div>
             </div>
         </section>
+        
         <!-- 2. Título ancho 100% con texto pequeño arriba - Efecto de revelación al scroll -->
         <section class="section-title-container container reveal-section">
             <div class="small-subtitle">Nuestra filosofía</div>
@@ -126,7 +153,8 @@
                 </div>
             </div>
         </section>
-                <!-- 4. Imagen 100% con líneas finas - Efecto draw para líneas -->
+        
+        <!-- 4. Imagen 100% con líneas finas - Efecto draw para líneas -->
         <section class="feature-section container">
             <div class="feature-line draw-line"></div>
             <div class="feature-container">
@@ -141,29 +169,32 @@
             </div>
             <div class="feature-line draw-line"></div>
         </section>
-             <!-- 5. 3 títulos escalonados separados por línea - Efecto de contador -->
+        
+        <!-- 5. 3 títulos escalonados separados por línea - Efecto de contador -->
         <section class="stepped-titles container">
-        <div class="title-step step-1 count-up-section">
-            <div class="step-number"><span class="count-up" data-count="1">1</span></div>
-            <h3>Diseño Intuitivo</h3>
-            <p>Creamos interfaces que se comunican naturalmente con el usuario, eliminando barreras y facilitando interacciones fluidas.</p>
-        </div>
-        <div class="divider"></div>
-        <div class="title-step step-2 count-up-section">
-            <div class="step-number"><span class="count-up" data-count="2">2</span></div>
-            <h3>Funcionalidad Superior</h3>
-            <p>Cada elemento cumple un propósito específico, optimizando recursos y maximizando resultados de manera eficiente.</p>
-        </div>
-        <div class="divider"></div>
-        <div class="title-step step-3 count-up-section">
-            <div class="step-number"><span class="count-up" data-count="3">3</span></div>
-            <h3>Estética Refinada</h3>
-            <p>El equilibrio perfecto entre forma y función, creando piezas que son tanto herramientas útiles como objetos de contemplación.</p>
-        </div>
-        <div class="feature-line draw-line"></div>
-         </section>
-         <!-- 6. Foto 100% con texto al scrollear - Efecto parallax mejorado -->
-         <section class="parallax-section">
+            <div class="title-step step-1 count-up-section">
+                <div class="step-number"><span class="count-up" data-count="1">1</span></div>
+                <h3>Diseño Intuitivo</h3>
+                <p>Creamos interfaces que se comunican naturalmente con el usuario, eliminando barreras y facilitando interacciones fluidas.</p>
+            </div>
+            <div class="divider"></div>
+            <div class="title-step step-2 count-up-section">
+                <div class="step-number"><span class="count-up" data-count="2">2</span></div>
+                <h3>Funcionalidad Superior</h3>
+                <p>Cada elemento cumple un propósito específico, optimizando recursos y maximizando resultados de manera eficiente.</p>
+            </div>
+            <div class="divider"></div>
+            <div class="title-step step-3 count-up-section">
+                <div class="step-number"><span class="count-up" data-count="3">3</span></div>
+                <h3>Estética Refinada</h3>
+                <p>El equilibrio perfecto entre forma y función, creando piezas que son tanto herramientas útiles como objetos de contemplación.</p>
+            </div>
+            <div class="feature-line draw-line"></div>
+        </section>
+       
+        
+        <!-- 6. Foto 100% con texto al scrollear - Efecto parallax mejorado -->
+        <section class="parallax-section">
             <div class="parallax-background">
                 <img src="https://res.cloudinary.com/dloaaxni6/image/upload/v1742762432/Screenshot_1_fbsfku.jpg" alt="Imagen parallax" class="parallax-image">
             </div>
@@ -175,32 +206,11 @@
                 </div>
             </div>
         </section>
-       
-     </main>
+    </main>
+    
+    <!-- El footer iría después de este contenido -->
+    
     <script>
-        // Menú móvil
-        const menuToggle = document.getElementById('menuToggle');
-        const mobileMenu = document.getElementById('mobileMenu');
-        
-        menuToggle.addEventListener('click', function() {
-            mobileMenu.classList.toggle('active');
-            // Removed the code that changes the icon to X
-        });
-         
-        // Cierra el menú al hacer clic en un enlace
-        const menuLinks = mobileMenu.querySelectorAll('a');
-        menuLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                mobileMenu.classList.remove('active');
-            });
-        });
-        
-        // Cierra el menú al hacer clic fuera de él
-        document.addEventListener('click', function(event) {
-            if (!mobileMenu.contains(event.target) && !menuToggle.contains(event.target)) {
-                mobileMenu.classList.remove('active');
-            }
-        });
         // Carrusel mejorado
         let currentSlide = 0;
         const slides = document.querySelectorAll('.carousel-item');
@@ -336,57 +346,59 @@
             revealOnScroll();
             parallaxEffect();
         });
-    
     </script>
 
-<footer>
-    <div class="footer-content container">
-        <div class="footer-info">
-            <h3>VERDE QUE TE QUIERO - CACTUS Y SUCULENTAS</h3>
-            <p>Cultivando belleza natural desde 2020.</p>
-            <p>Nuestro compromiso es ofrecer plantas de excelencia que superen las expectativas de los amantes de la naturaleza.</p>
-            <div class="footer-contact">
-                <p><i class="fas fa-map-marker-alt"></i> Av. de las Plantas 123, Madrid</p>
-                <p><i class="fas fa-phone"></i> +34 600 123 456</p>
-                <p><i class="fas fa-envelope"></i> info@verdeqtquiero.es</p>
-            </div>
-        </div>
-        
-        <div class="footer-nav">
-            <h4>Enlaces</h4>
-            <a href="about.html">La Historia</a>
-            <a href="feedback.html">Los clientes opinan</a>
-            <a href="blog.html">Blog</a>
-            <a href="pol.html">Política de Privacidad</a>
-        </div>
-        
-        <div class="footer-social">
-            <h4>Síguenos</h4>
-            <div class="social-links">
-                <a href="https://www.facebook.com/verde.queteqiero" target="_blank" aria-label="Facebook">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="https://www.instagram.com/verde.queteqiero" target="_blank" aria-label="Instagram">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://x.com/verdeqtquiero" target="_blank" aria-label="X (Twitter)">
-                    <i class="fab fa-x"></i>
-                </a>
+    <footer>
+        <div class="footer-content container">
+            <div class="footer-info">
+                <h3>VERDE QUE TE QUIERO - CACTUS Y SUCULENTAS</h3>
+                <p>Cultivando belleza natural desde 2020.</p>
+                <p>Nuestro compromiso es ofrecer plantas de excelencia que superen las expectativas de los amantes de la naturaleza.</p>
+                <div class="footer-contact">
+                    <p><i class="fas fa-map-marker-alt"></i> Av. de las Plantas 123, Madrid</p>
+                    <p><i class="fas fa-phone"></i> +34 600 123 456</p>
+                    <p><i class="fas fa-envelope"></i> info@verdeqtquiero.es</p>
+                </div>
             </div>
             
-            <div class="newsletter">
-                <h4>Suscríbete a nuestro boletín</h4>
-                <form class="newsletter-form">
-                    <input type="email" placeholder="Tu correo electrónico" required>
-                    <button type="submit"><i class="fas fa-paper-plane"></i></button>
-                </form>
+            <div class="footer-nav">
+                <h4>Enlaces</h4>
+                <a href="about.html">La Historia</a>
+                <a href="feedback.html">Los clientes opinan</a>
+                <a href="blog.html">Blog</a>
+                <a href="pol.html">Política de Privacidad</a>
+            </div>
+            
+            <div class="footer-social">
+                <h4>Síguenos</h4>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/verde.queteqiero" target="_blank" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/verde.queteqiero" target="_blank" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://x.com/verdeqtquiero" target="_blank" aria-label="X (Twitter)">
+                        <i class="fab fa-x"></i>
+                    </a>
+                </div>
+                
+                <div class="newsletter">
+                    <h4>Suscríbete a nuestro boletín</h4>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Tu correo electrónico" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
-    
-    <div class="footer-bottom">
-        <p>&copy; 2025 VERDE QUE TE QUIERO - Todos los derechos reservados</p>
-    </div>
-</footer>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 VERDE QUE TE QUIERO - Todos los derechos reservados</p>
+        </div>
+    </footer>
+ <!-- colocar los scripts  -->
+
+
 </body>
 </html>
