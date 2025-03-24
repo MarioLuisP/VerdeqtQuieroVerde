@@ -963,6 +963,7 @@ footer {
     .feature-container {
         flex-direction: column;
         gap: 30px;
+        padding: 16px; 
     }
     
     .parallax-text {
@@ -1025,20 +1026,20 @@ footer {
     
     .brand-name {
         font-size: 1.2rem;    
-}
-h1.brand-name .sub-text {
-    display: inline; /* Por defecto, está en línea */
+    }
+    h1.brand-name .sub-text {
+        display: inline; /* Por defecto, está en línea */
+        }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .product-image-container {
+        height: 220px;
     }
 }
-.product-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-}
-
-.product-image-container {
-    height: 220px;
-}
-
 @media (max-width: 576px) {
     h1 { font-size: 1.8rem; }
     h2 { font-size: 1.5rem; }
@@ -1071,6 +1072,7 @@ h1.brand-name .sub-text {
     
     .gallery-grid {
         grid-template-columns: 1fr;
+        padding: 16px; 
     }
     
     .stepped-titles {
