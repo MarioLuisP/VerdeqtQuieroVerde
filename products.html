@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verde qt quiero</title>
+    <!-- Favicon added here -->
+    <link rel="icon" href="https://res.cloudinary.com/dloaaxni6/image/upload/v1742515352/final_final_cactus3_pbhsl0.jpg" type="image/jpeg">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header with horizontal menu for desktop -->
+    <header>
+        <div class="header-container">
+            <div class="logo-container">
+                <!-- Logo now links to index.html -->
+                <a href="index.html">
+                    <img src="https://res.cloudinary.com/dloaaxni6/image/upload/v1742515352/final_final_cactus3_pbhsl0.jpg" alt="Logo" class="logo">
+                </a>
+                <h1 class="brand-name">VERDE QUE TE QUIERO <span class="sub-text">Cactus y Suculentas</span></h1>
+
+            </div>
+
+            <!-- Desktop Menu -->
+            <nav class="desktop-menu">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="products.html">Productos</a></li>
+                    <li><a href="about.html">Mis inicios</a></li>
+                    <li><a href="faq.html">Preguntas frecuentes</a></li>
+                    <li><a href="contact.html">Contacto</a></li>
+                </ul>
+            </nav>
+        
+            <!-- Mobile Menu Icon (hamburger) -->
+            <div class="menu-icon" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>   
+        
+        <!-- Mobile Menu (hidden by default) -->
+        <div class="mobile-menu" id="mobileMenu">
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a href="products.html"><i class="fas fa-shopping-bag"></i> Productos</a></li>
+                <li><a href="about.html"><i class="fas fa-info-circle"></i> Mis Inicios</a></li>
+                <li><a href="faq.html"><i class="fas fa-question"></i> Preguntas frecuentes</a></li>
+                <li><a href="contact.html"><i class="fas fa-envelope"></i> Contacto</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <script>
+        // Menú móvil
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        menuToggle.addEventListener('click', function() {
+            mobileMenu.classList.toggle('active');
+            // Removed the code that changes the icon to X
+        });
+         
+        // Cierra el menú al hacer clic en un enlace
+        const menuLinks = mobileMenu.querySelectorAll('a');
+        menuLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenu.classList.remove('active');
+            });
+        });
+        
+        // Cierra el menú al hacer clic fuera de él
+        document.addEventListener('click', function(event) {
+            if (!mobileMenu.contains(event.target) && !menuToggle.contains(event.target)) {
+                mobileMenu.classList.remove('active');
+            }
+        });
+    </script>
+
+    <main>
+        <!-- Título de la sección -->
+        <section class="section-title-container container reveal-section">
+
+            <div class="small-subtitle"><br><br></div>
+            <div class="small-subtitle">Nuestras Creaciones</div>
+            <h2 class="main-title">Descubre nuestra variedad de productos artesanales</h2>
+        </section>
+        
+        <!-- Línea decorativa -->
+        <div class="container">
+            <div class="feature-line draw-line"></div>
+        </div>
+        
+        <!-- Catálogo de grupos de productos -->
+        <section class="product-groups container">
+            <div class="product-grid">
+                <!-- Grupo de Producto 1 -->
+                <div class="product-card reveal-section">
+                    <div class="product-image-container">
+                        <img src="https://res.cloudinary.com/dloaaxni6/image/upload/v1742509157/c3ee1b91-2aeb-4735-b13e-6fd183873339.png" alt="Macetas de Cemento" class="product-image">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Macetas de Cemento</h3>
+                        <p class="product-description">Piezas duraderas con diseños minimalistas que aportan un toque contemporáneo a cualquier espacio.</p>
+                        <a href="products/macetas-cemento.html" class="feature-link">Ver colección <i class="fas fa-long-arrow-alt-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Grupo de Producto 2 -->
+                <div class="product-card reveal-section">
+                    <div class="product-image-container">
+                        <img src="https://res.cloudinary.com/dloaaxni6/image/upload/v1742509232/70252c26-e942-43c9-99c7-1482559a9c00.png" alt="Macetas con Decoupage" class="product-image">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Macetas con Decoupage</h3>
+                        <p class="product-description">Creaciones artísticas que combinan texturas y patrones, transformando simples macetas en piezas decorativas únicas.</p>
+                        <a href="products/macetas-decoupage.html" class="feature-link">Ver colección <i class="fas fa-long-arrow-alt-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Grupo de Producto 3 -->
+                <div class="product-card reveal-section">
+                    <div class="product-image-container">
+                        <img src="https://res.cloudinary.com/dloaaxni6/image/upload/v1742509283/40444bbd-aa3a-49ab-bded-63fbb2cc540a.png" alt="Macetas Colgantes" class="product-image">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Macetas Colgantes</h3>
+                        <p class="product-description">Soluciones elegantes para aprovechar espacios verticales y crear ambientes verdes con personalidad.</p>
+                        <a href="products/macetas-colgantes.html" class="feature-link">Ver colección <i class="fas fa-long-arrow-alt-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Grupo de Producto 4 -->
+                <div class="product-card reveal-section">
+                    <div class="product-image-container">
+                        <img src="https://res.cloudinary.com/dloaaxni6/image/upload/v1742509416/9e77ffa9-303c-4156-8606-a969c89fb376.png" alt="Maceteros de Madera" class="product-image">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Maceteros de Madera</h3>
+                        <p class="product-description">La calidez natural de la madera combinada con diseños funcionales para dar vida a tus espacios.</p>
+                        <a href="products/maceteros-madera.html" class="feature-link">Ver colección <i class="fas fa-long-arrow-alt-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Grupo de Producto 5 -->
+                <div class="product-card reveal-section">
+                    <div class="product-image-container">
+                        <img src="https://res.cloudinary.com/dloaaxni6/image/upload/v1742509550/17ae1554-6bed-44e4-aa8e-d7163243ab67.png" alt="Terrarios" class="product-image">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Terrarios</h3>
+                        <p class="product-description">Ecosistemas en miniatura que traen un pedazo de naturaleza a cualquier interior con mínimo mantenimiento.</p>
+                        <a href="products/terrarios.html" class="feature-link">Ver colección <i class="fas fa-long-arrow-alt-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Grupo de Producto 6 -->
+                <div class="product-card reveal-section">
+                    <div class="product-image-container">
+                        <img src="https://res.cloudinary.com/dloaaxni6/image/upload/v1742762432/Screenshot_1_fbsfku.jpg" alt="Accesorios de Jardín" class="product-image">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Accesorios de Jardín</h3>
+                        <p class="product-description">Complementos esenciales que facilitan el cuidado de tus plantas y embellecen tus espacios verdes.</p>
+                        <a href="products/accesorios-jardin.html" class="feature-link">Ver colección <i class="fas fa-long-arrow-alt-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Línea decorativa -->
+        <div class="container">
+            <div class="feature-line draw-line"></div>
+        </div>
+        
+        <!-- Sección CTA -->
+        <section class="parallax-section">
+            <div class="parallax-background">
+                <img src="https://res.cloudinary.com/dloaaxni6/image/upload/v1742762432/Screenshot_1_fbsfku.jpg" alt="Imagen parallax" class="parallax-image">
+            </div>
+            <div class="parallax-content">
+                <div class="parallax-text">
+                    <h2 class="parallax-title">¿No encuentras lo que buscas?</h2>
+                    <p class="parallax-description">Contáctanos para personalizar el diseño perfecto que se adapte a tus necesidades y estilo.</p>
+                    <a href="contact.html" class="parallax-button">Contáctanos</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content container">
+            <div class="footer-info">
+                <h3>VERDE QUE TE QUIERO - CACTUS Y SUCULENTAS</h3>
+                <p>Cultivando belleza natural desde 2020.</p>
+                <p>Nuestro compromiso es ofrecer plantas de excelencia que superen las expectativas de los amantes de la naturaleza.</p>
+                <div class="footer-contact">
+                    <p><i class="fas fa-map-marker-alt"></i> Av. de las Plantas 123, Madrid</p>
+                    <p><i class="fas fa-phone"></i> +34 600 123 456</p>
+                    <p><i class="fas fa-envelope"></i> info@verdeqtquiero.es</p>
+                </div>
+            </div>
+            
+            <div class="footer-nav">
+                <h4>Enlaces</h4>
+                <a href="about.html">La Historia</a>
+                <a href="feedback.html">Los clientes opinan</a>
+                <a href="blog.html">Blog</a>
+                <a href="pol.html">Política de Privacidad</a>
+            </div>
+            
+            <div class="footer-social">
+                <h4>Síguenos</h4>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/verde.queteqiero" target="_blank" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/verde.queteqiero" target="_blank" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://x.com/verdeqtquiero" target="_blank" aria-label="X (Twitter)">
+                        <i class="fab fa-x"></i>
+                    </a>
+                </div>
+                
+                <div class="newsletter">
+                    <h4>Suscríbete a nuestro boletín</h4>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Tu correo electrónico" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 VERDE QUE TE QUIERO - Todos los derechos reservados</p>
+        </div>
+    </footer>
+ <!-- colocar los scripts  -->
+ <script>
+    // Efecto de revelación al scroll
+    function revealOnScroll() {
+        const elements = document.querySelectorAll('.reveal-section, .draw-line');
+        const windowHeight = window.innerHeight;
+        
+        elements.forEach((element) => {
+            const elementTop = element.getBoundingClientRect().top;
+            const elementVisible = 150;
+            
+            if (elementTop < windowHeight - elementVisible) {
+                element.classList.add('active');
+            }
+        });
+    }
+    
+    // Parallax efecto
+    function parallaxEffect() {
+        const parallaxSection = document.querySelector('.parallax-section');
+        const parallaxText = document.querySelector('.parallax-text');
+        const parallaxImg = document.querySelector('.parallax-image');
+        const scrollPosition = window.pageYOffset;
+        
+        if (parallaxSection) {
+            const sectionTop = parallaxSection.getBoundingClientRect().top;
+            const sectionBottom = parallaxSection.getBoundingClientRect().bottom;
+            
+            if (sectionTop < window.innerHeight && sectionBottom > 0) {
+                // Efecto parallax en la imagen
+                parallaxImg.style.transform = `translateY(${scrollPosition * 0.05}px)`;
+                
+                // Añadir clase active para mostrar el texto con fade in
+                parallaxText.classList.add('active');
+            } else {
+                // Opcional: remover la clase si la sección no está visible
+                parallaxText.classList.remove('active');
+            }
+        }
+    }
+    
+    // Eventos de scroll
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('scroll', parallaxEffect);
+    
+    // Iniciar al cargar la página
+    window.addEventListener('load', () => {
+        revealOnScroll();
+        parallaxEffect();
+    });
+</script>
+<style>
+    /* Estilos específicos para la página de grupos de productos */
+    .product-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        margin: 40px 0;
+    }
+    
+    .product-card {
+        background-color: white;
+        border-radius: var(--border-radius-medium);
+        overflow: hidden;
+        box-shadow: var(--box-shadow);
+        transition: var(--transition-medium);
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    
+    .product-card.active {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    .product-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--hover-shadow);
+    }
+    
+    .product-image-container {
+        overflow: hidden;
+        height: 250px;
+    }
+    
+    .product-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+    
+    .product-card:hover .product-image {
+        transform: scale(1.05);
+    }
+    
+    .product-info {
+        padding: 25px;
+    }
+    
+    .product-title {
+        color: var(--primary-dark);
+        margin-bottom: 15px;
+        font-size: 1.4rem;
+    }
+    
+    .product-description {
+        color: var(--text-color);
+        margin-bottom: 20px;
+        line-height: 1.6;
+    }
+    
+    /* Media Queries para responsividad */
+    @media (max-width: 992px) {
+        .product-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .product-grid {
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        
+        .product-image-container {
+            height: 220px;
+        }
+    }
+</style>
+</body>
+</html>
