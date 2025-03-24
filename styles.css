@@ -245,8 +245,9 @@ h1.brand-name .sub-text {
 .mobile-menu {
     position: fixed;
     top: 70px;
-    right: 0;
-    width: 60%;
+    right: 15px;
+    width: 90%;
+    max-width: 300px;
     border-radius: var(--border-radius-large);
     background-color: var(--dark-bg);
     padding: 20px;
@@ -345,7 +346,7 @@ h1.brand-name .sub-text {
 
 .carousel-text h2 {
     font-size: 3rem;
-    margin-bottom: 20px !important;
+    margin-bottom: 10px !important;
     opacity: 0;
     transition: opacity 1s ease 0.3s;
 }
@@ -353,7 +354,7 @@ h1.brand-name .sub-text {
 .carousel-text p {
     font-size: 1.2rem;
     opacity: 0;
-    margin-top: 10px;
+    margin-top: 5px;
     transform: translateY(20px);
     transition: all 1s ease 0.5s;
 }
@@ -993,8 +994,22 @@ footer {
     }
 
 }
+@media screen and (max-width: 768px) {
+    .desktop-menu {
+        display: none;
+    }
 
-@media (max-width: 768px) {
+    .menu-icon {
+        display: block;
+    }
+
+    .mobile-menu {
+        width: 90%; /* Ancho responsivo */
+        max-width: 300px; /* Ancho máximo */
+        right: 15px; /* Margen desde el borde derecho */
+        top: 60px; /* Ajustar posición superior */
+    }
+
     .logo {
         height: 40px;
         width: 40px;
