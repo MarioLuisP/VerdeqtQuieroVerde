@@ -92,7 +92,7 @@ ul {
 
 .container {
     width: 100%;
-    max-width: 1500px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: var(--container-padding);
 }
@@ -353,9 +353,11 @@ h1.brand-name .sub-text {
 .carousel-text p {
     font-size: 1.2rem;
     opacity: 0;
+    margin-top: 10px;
     transform: translateY(20px);
     transition: all 1s ease 0.5s;
 }
+
 
 .carousel-controls {
     position: absolute;
@@ -1009,6 +1011,7 @@ footer {
     
     .carousel-text h2 {
         font-size: 2rem;
+        margin-bottom: 20px !important;
     }
     
     .stepped-titles {
@@ -1049,13 +1052,22 @@ footer {
     }
 }
 @media (max-width: 576px) {
-    h1 { font-size: 1.8rem; }
-    h2 { font-size: 1.5rem; }
-    h3 { font-size: 1.3rem; }
+    h1 { 
+        font-size: 1.8rem; 
+    }
+    
+    h2 { 
+        font-size: 1.5rem; 
+    }
+    
+    h3 { 
+        font-size: 1.3rem; 
+    }
     
     h1.brand-name .sub-text {
         display: block; /* Lo pone en una nueva línea */
-      }
+    }
+    
     .carousel {
         height: 50vh;
     }
@@ -1068,12 +1080,23 @@ footer {
     .carousel-text h2 {
         font-size: 1.5rem;
         margin-bottom: 10px;
+        /* Asegurar visualización en bloque */
+        display: block;
     }
     
     .carousel-text p {
         font-size: 1rem;
+        /* Asegurar visualización en bloque y espaciado */
+        display: block;
+        margin-top: 10px;
     }
     
+    /* Seguro adicional de espaciado */
+    .carousel-text h2,
+    .carousel-text p {
+        width: 100%;
+    }
+
     .main-title {
         font-size: 1.8rem;
     }
