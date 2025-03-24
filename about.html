@@ -3,13 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Verde qt quiero - Nuestros Productos</title>
+    <title>Verde qt quiero</title>
+    <!-- Favicon added here -->
+    <link rel="icon" href="https://res.cloudinary.com/dloaaxni6/image/upload/v1742515352/final_final_cactus3_pbhsl0.jpg" type="image/jpeg">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Contenido principal (el header iría antes de esto) -->
+    <!-- Header with horizontal menu for desktop -->
+    <header>
+        <div class="header-container">
+            <div class="logo-container">
+                <!-- Logo now links to index.html -->
+                <a href="index.html">
+                    <img src="https://res.cloudinary.com/dloaaxni6/image/upload/v1742515352/final_final_cactus3_pbhsl0.jpg" alt="Logo" class="logo">
+                </a>
+                <h1 class="brand-name">VERDE QUE TE QUIERO <span class="sub-text">Cactus y Suculentas</span></h1>
+
+            </div>
+
+            <!-- Desktop Menu -->
+            <nav class="desktop-menu">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="products.html">Productos</a></li>
+                    <li><a href="about.html">Mis inicios</a></li>
+                    <li><a href="faq.html">Preguntas frecuentes</a></li>
+                    <li><a href="contact.html">Contacto</a></li>
+                </ul>
+            </nav>
+        
+            <!-- Mobile Menu Icon (hamburger) -->
+            <div class="menu-icon" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>   
+        
+        <!-- Mobile Menu (hidden by default) -->
+        <div class="mobile-menu" id="mobileMenu">
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a href="products.html"><i class="fas fa-shopping-bag"></i> Productos</a></li>
+                <li><a href="about.html"><i class="fas fa-info-circle"></i> Mis Inicios</a></li>
+                <li><a href="faq.html"><i class="fas fa-question"></i> Preguntas frecuentes</a></li>
+                <li><a href="contact.html"><i class="fas fa-envelope"></i> Contacto</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <script>
+        // Menú móvil
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        menuToggle.addEventListener('click', function() {
+            mobileMenu.classList.toggle('active');
+            // Removed the code that changes the icon to X
+        });
+         
+        // Cierra el menú al hacer clic en un enlace
+        const menuLinks = mobileMenu.querySelectorAll('a');
+        menuLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenu.classList.remove('active');
+            });
+        });
+        
+        // Cierra el menú al hacer clic fuera de él
+        document.addEventListener('click', function(event) {
+            if (!mobileMenu.contains(event.target) && !menuToggle.contains(event.target)) {
+                mobileMenu.classList.remove('active');
+            }
+        });
+    </script>
+
     <main>
         <!-- Título de la sección -->
         <section class="section-title-container container reveal-section">
@@ -229,149 +299,125 @@
             });
         }
         
-        // Inicializar carrusel para móviles
-        function initializeCarousel() {
-            const slideContainer = document.querySelector('.carousel-slide-container');
-            const dotsContainer = document.querySelector('.carousel-dots');
-            const prevButton = document.querySelector('.carousel-prev');
-            const nextButton = document.querySelector('.carousel-next');
-            
-            // Limpiar contenedores
+// Improved Mobile Product Carousel
+document.addEventListener('DOMContentLoaded', function() {
+    function initializeMobileProductCarousel() {
+        const slideContainer = document.querySelector('.carousel-slide-container');
+        const dotsContainer = document.querySelector('.carousel-dots');
+        const prevButton = document.querySelector('.carousel-prev');
+        const nextButton = document.querySelector('.carousel-next');
+        
+        // Verificar si los elementos necesarios existen
+        if (!slideContainer || !dotsContainer || !prevButton || !nextButton) {
+            console.warn('Carousel elements not found');
+            return;
+        }
+        
+        // Solo activar en móviles
+        if (window.innerWidth >= 576) {
+            slideContainer.innerHTML = '';
+            dotsContainer.innerHTML = '';
+            return;
+        }
+        
+        function resetCarousel() {
+            // Limpiar contenido existente
             slideContainer.innerHTML = '';
             dotsContainer.innerHTML = '';
             
-            // Obtener productos visibles
-            const visibleProducts = Array.from(document.querySelectorAll('.product-card')).filter(
-                card => window.getComputedStyle(card).display !== 'none'
-            );
+            // Obtener tarjetas de productos visibles
+            const visibleProducts = Array.from(document.querySelectorAll('.product-card'))
+                .filter(card => window.getComputedStyle(card).display !== 'none');
             
             if (visibleProducts.length === 0) return;
             
-            // Generar slides
+            // Crear slides y dots de navegación
             visibleProducts.forEach((product, index) => {
-                // Clonar el producto para el carrusel
                 const slide = document.createElement('div');
                 slide.className = 'carousel-slide';
                 if (index === 0) slide.classList.add('active');
                 
                 const productClone = product.cloneNode(true);
-                productClone.classList.add('active'); // Asegurar que sea visible
+                productClone.classList.add('active');
                 slide.appendChild(productClone);
                 slideContainer.appendChild(slide);
                 
-                // Crear dots para navegación
                 const dot = document.createElement('div');
                 dot.className = 'carousel-dot';
                 if (index === 0) dot.classList.add('active');
                 dot.setAttribute('data-index', index);
                 dotsContainer.appendChild(dot);
                 
-                // Event listener para los dots
-                dot.addEventListener('click', () => {
-                    goToSlide(index);
-                });
+                dot.addEventListener('click', () => goToSlide(index));
             });
             
             let currentSlide = 0;
             
-            // Función para ir a un slide específico
             function goToSlide(index) {
-                // Actualizar slides
-                document.querySelectorAll('.carousel-slide').forEach((slide, i) => {
+                const slides = document.querySelectorAll('.carousel-slide');
+                const dots = document.querySelectorAll('.carousel-dot');
+                
+                slides.forEach((slide, i) => {
                     slide.classList.toggle('active', i === index);
                 });
                 
-                // Actualizar dots
-                document.querySelectorAll('.carousel-dot').forEach((dot, i) => {
+                dots.forEach((dot, i) => {
                     dot.classList.toggle('active', i === index);
                 });
                 
                 currentSlide = index;
             }
             
-            // Event listeners para botones prev/next
-            prevButton.addEventListener('click', () => {
+            // Navegación con botones
+            prevButton.onclick = () => {
                 currentSlide = (currentSlide - 1 + visibleProducts.length) % visibleProducts.length;
                 goToSlide(currentSlide);
-            });
+            };
             
-            nextButton.addEventListener('click', () => {
+            nextButton.onclick = () => {
                 currentSlide = (currentSlide + 1) % visibleProducts.length;
                 goToSlide(currentSlide);
-            });
+            };
             
-            // Swipe para móviles
-            let touchstartX = 0;
-            let touchendX = 0;
+            // Navegación por deslizamiento táctil
+            let touchStartX = 0;
+            let touchEndX = 0;
             
             slideContainer.addEventListener('touchstart', e => {
-                touchstartX = e.changedTouches[0].screenX;
-            });
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
             
             slideContainer.addEventListener('touchend', e => {
-                touchendX = e.changedTouches[0].screenX;
+                touchEndX = e.changedTouches[0].screenX;
                 handleSwipe();
-            });
+            }, { passive: true });
             
             function handleSwipe() {
-                const threshold = 50; // Umbral para considerar un swipe
-                if (touchendX < touchstartX - threshold) {
-                    // Swipe izquierda - siguiente slide
+                const swipeThreshold = 50;
+                
+                if (touchEndX < touchStartX - swipeThreshold) {
                     nextButton.click();
                 }
-                if (touchendX > touchstartX + threshold) {
-                    // Swipe derecha - slide anterior
+                
+                if (touchEndX > touchStartX + swipeThreshold) {
                     prevButton.click();
                 }
             }
-            
-            // Auto-rotación (opcional)
-            let autoplayInterval;
-            
-            function startAutoplay() {
-                autoplayInterval = setInterval(() => {
-                    currentSlide = (currentSlide + 1) % visibleProducts.length;
-                    goToSlide(currentSlide);
-                }, 5000); // Cambiar cada 5 segundos
-            }
-            
-            function stopAutoplay() {
-                clearInterval(autoplayInterval);
-            }
-            
-            // Iniciar autoplay
-            startAutoplay();
-            
-            // Detener autoplay al interactuar
-            slideContainer.addEventListener('mouseenter', stopAutoplay);
-            slideContainer.addEventListener('mouseleave', startAutoplay);
-            slideContainer.addEventListener('touchstart', stopAutoplay, {passive: true});
-            prevButton.addEventListener('click', () => {
-                stopAutoplay();
-                setTimeout(startAutoplay, 10000); // Reiniciar después de 10s
-            });
-            nextButton.addEventListener('click', () => {
-                stopAutoplay();
-                setTimeout(startAutoplay, 10000); // Reiniciar después de 10s
-            });
         }
         
-        // Función para controlar visualización basada en viewport
-        function handleViewportChange() {
-            const isMobile = window.innerWidth < 576;
-            const mobileView = document.querySelector('.mobile-view');
-            const desktopView = document.querySelector('.desktop-view');
-            
-            if (isMobile) {
-                mobileView.style.display = 'block';
-                desktopView.style.display = 'none';
-                initializeCarousel();
-            } else {
-                mobileView.style.display = 'none';
-                desktopView.style.display = 'block';
-            }
-        }
+        // Inicializar y manejar cambios
+        resetCarousel();
+        window.addEventListener('resize', resetCarousel);
         
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        filterButtons.forEach(button => {
+            button.addEventListener('click', resetCarousel);
+        });
+    }
+    
+    // Inicializar carrusel móvil
+    initializeMobileProductCarousel();
+});
         // Eventos de scroll y resize
         window.addEventListener('scroll', revealOnScroll);
         window.addEventListener('scroll', parallaxEffect);
@@ -626,5 +672,59 @@
             }
         }
     </style>
+
+
+    <footer>
+        <div class="footer-content container">
+            <div class="footer-info">
+                <h3>VERDE QUE TE QUIERO - CACTUS Y SUCULENTAS</h3>
+                <p>Cultivando belleza natural desde 2020.</p>
+                <p>Nuestro compromiso es ofrecer plantas de excelencia que superen las expectativas de los amantes de la naturaleza.</p>
+                <div class="footer-contact">
+                    <p><i class="fas fa-map-marker-alt"></i> Av. de las Plantas 123, Madrid</p>
+                    <p><i class="fas fa-phone"></i> +34 600 123 456</p>
+                    <p><i class="fas fa-envelope"></i> info@verdeqtquiero.es</p>
+                </div>
+            </div>
+            
+            <div class="footer-nav">
+                <h4>Enlaces</h4>
+                <a href="about.html">La Historia</a>
+                <a href="feedback.html">Los clientes opinan</a>
+                <a href="blog.html">Blog</a>
+                <a href="pol.html">Política de Privacidad</a>
+            </div>
+            
+            <div class="footer-social">
+                <h4>Síguenos</h4>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/verde.queteqiero" target="_blank" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/verde.queteqiero" target="_blank" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://x.com/verdeqtquiero" target="_blank" aria-label="X (Twitter)">
+                        <i class="fab fa-x"></i>
+                    </a>
+                </div>
+                
+                <div class="newsletter">
+                    <h4>Suscríbete a nuestro boletín</h4>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Tu correo electrónico" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 VERDE QUE TE QUIERO - Todos los derechos reservados</p>
+        </div>
+    </footer>
+ <!-- colocar los scripts  -->
+
+
 </body>
 </html>
