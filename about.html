@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Verde qt quiero</title>
-    <!-- Favicon added here -->
     <link rel="icon" href="https://res.cloudinary.com/dloaaxni6/image/upload/v1742515352/final_final_cactus3_pbhsl0.jpg" type="image/jpeg">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -13,19 +12,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Header with horizontal menu for desktop -->
     <header>
         <div class="header-container">
             <div class="logo-container">
-                <!-- Logo now links to index.html -->
                 <a href="index.html">
                     <img src="https://res.cloudinary.com/dloaaxni6/image/upload/v1742515352/final_final_cactus3_pbhsl0.jpg" alt="Logo" class="logo">
                 </a>
                 <h1 class="brand-name">VERDE QUE TE QUIERO <span class="sub-text">Cactus y Suculentas</span></h1>
-
             </div>
 
-            <!-- Desktop Menu -->
             <nav class="desktop-menu">
                 <ul>
                     <li><a href="index.html">Inicio</a></li>
@@ -36,13 +31,11 @@
                 </ul>
             </nav>
         
-            <!-- Mobile Menu Icon (hamburger) -->
             <div class="menu-icon" id="menuToggle">
                 <i class="fas fa-bars"></i>
             </div>
         </div>   
         
-        <!-- Mobile Menu (hidden by default) -->
         <div class="mobile-menu" id="mobileMenu">
             <ul>
                 <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
@@ -61,7 +54,6 @@
         
         menuToggle.addEventListener('click', function() {
             mobileMenu.classList.toggle('active');
-            // Removed the code that changes the icon to X
         });
          
         // Cierra el menú al hacer clic en un enlace
@@ -81,18 +73,16 @@
     </script>
 
     <main>
-        <!-- Título de la sección -->
         <section class="section-title-container container reveal-section">
+            <div class="small-subtitle"><br><br></div>
             <div class="small-subtitle">Nuestras Creaciones</div>
             <h2 class="main-title">Descubre nuestra variedad de productos artesanales</h2>
         </section>
         
-        <!-- Línea decorativa -->
         <div class="container">
             <div class="feature-line draw-line"></div>
         </div>
 
-        <!-- Filtro rápido -->
         <div class="filter-container container reveal-section">
             <div class="filter-title">Filtrar por categoría:</div>
             <div class="filter-buttons">
@@ -106,10 +96,8 @@
             </div>
         </div>
         
-        <!-- Catálogo de grupos de productos - Vista Desktop y Tablet -->
-        <section class="product-groups container desktop-view">
+        <section class="product-groups container">
             <div class="product-grid">
-                <!-- Grupo de Producto 1 -->
                 <div class="product-card reveal-section" data-category="macetas-cemento">
                     <div class="product-image-container">
                         <img src="https://res.cloudinary.com/dloaaxni6/image/upload/v1742509157/c3ee1b91-2aeb-4735-b13e-6fd183873339.png" alt="Macetas de Cemento" class="product-image">
@@ -121,7 +109,6 @@
                     </div>
                 </div>
                 
-                <!-- Grupo de Producto 2 -->
                 <div class="product-card reveal-section" data-category="macetas-decoupage">
                     <div class="product-image-container">
                         <img src="https://res.cloudinary.com/dloaaxni6/image/upload/v1742509232/70252c26-e942-43c9-99c7-1482559a9c00.png" alt="Macetas con Decoupage" class="product-image">
@@ -133,7 +120,6 @@
                     </div>
                 </div>
                 
-                <!-- Grupo de Producto 3 -->
                 <div class="product-card reveal-section" data-category="macetas-colgantes">
                     <div class="product-image-container">
                         <img src="https://res.cloudinary.com/dloaaxni6/image/upload/v1742509283/40444bbd-aa3a-49ab-bded-63fbb2cc540a.png" alt="Macetas Colgantes" class="product-image">
@@ -145,7 +131,6 @@
                     </div>
                 </div>
                 
-                <!-- Grupo de Producto 4 -->
                 <div class="product-card reveal-section" data-category="maceteros-madera">
                     <div class="product-image-container">
                         <img src="https://res.cloudinary.com/dloaaxni6/image/upload/v1742509416/9e77ffa9-303c-4156-8606-a969c89fb376.png" alt="Maceteros de Madera" class="product-image">
@@ -157,7 +142,6 @@
                     </div>
                 </div>
                 
-                <!-- Grupo de Producto 5 -->
                 <div class="product-card reveal-section" data-category="terrarios">
                     <div class="product-image-container">
                         <img src="https://res.cloudinary.com/dloaaxni6/image/upload/v1742509550/17ae1554-6bed-44e4-aa8e-d7163243ab67.png" alt="Terrarios" class="product-image">
@@ -169,7 +153,6 @@
                     </div>
                 </div>
                 
-                <!-- Grupo de Producto 6 -->
                 <div class="product-card reveal-section" data-category="accesorios-jardin">
                     <div class="product-image-container">
                         <img src="https://res.cloudinary.com/dloaaxni6/image/upload/v1742762432/Screenshot_1_fbsfku.jpg" alt="Accesorios de Jardín" class="product-image">
@@ -183,28 +166,10 @@
             </div>
         </section>
         
-        <!-- Carrusel para móviles -->
-        <section class="mobile-carousel-container container mobile-view">
-            <div class="carousel-wrapper">
-                <div class="carousel-slide-container">
-                    <!-- Los slides se generarán con JavaScript -->
-                </div>
-                <div class="carousel-controls">
-                    <button class="carousel-prev"><i class="fas fa-chevron-left"></i></button>
-                    <div class="carousel-dots">
-                        <!-- Los dots se generarán con JavaScript -->
-                    </div>
-                    <button class="carousel-next"><i class="fas fa-chevron-right"></i></button>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Línea decorativa -->
         <div class="container">
             <div class="feature-line draw-line"></div>
         </div>
         
-        <!-- Sección CTA -->
         <section class="parallax-section">
             <div class="parallax-background">
                 <img src="https://res.cloudinary.com/dloaaxni6/image/upload/v1742762432/Screenshot_1_fbsfku.jpg" alt="Imagen parallax" class="parallax-image">
@@ -218,8 +183,6 @@
             </div>
         </section>
     </main>
-    
-    <!-- El footer iría después de este contenido -->
     
     <script>
         // Efecto de revelación al scroll
@@ -249,13 +212,9 @@
                 const sectionBottom = parallaxSection.getBoundingClientRect().bottom;
                 
                 if (sectionTop < window.innerHeight && sectionBottom > 0) {
-                    // Efecto parallax en la imagen
                     parallaxImg.style.transform = `translateY(${scrollPosition * 0.05}px)`;
-                    
-                    // Añadir clase active para mostrar el texto con fade in
                     parallaxText.classList.add('active');
                 } else {
-                    // Opcional: remover la clase si la sección no está visible
                     parallaxText.classList.remove('active');
                 }
             }
@@ -290,210 +249,25 @@
                             }, 300);
                         }
                     });
-                    
-                    // Si estamos en móvil, reiniciar el carrusel
-                    if (window.innerWidth < 576) {
-                        initializeCarousel();
-                    }
                 });
             });
         }
         
-// Improved Mobile Product Carousel
-document.addEventListener('DOMContentLoaded', function() {
-    function initializeMobileProductCarousel() {
-        const slideContainer = document.querySelector('.carousel-slide-container');
-        const dotsContainer = document.querySelector('.carousel-dots');
-        const prevButton = document.querySelector('.carousel-prev');
-        const nextButton = document.querySelector('.carousel-next');
-        
-        // Verificar si los elementos necesarios existen
-        if (!slideContainer || !dotsContainer || !prevButton || !nextButton) {
-            console.warn('Carousel elements not found');
-            return;
-        }
-        
-        // Solo activar en móviles
-        if (window.innerWidth >= 576) {
-            slideContainer.innerHTML = '';
-            dotsContainer.innerHTML = '';
-            return;
-        }
-        
-        function resetCarousel() {
-            // Limpiar contenido existente
-            slideContainer.innerHTML = '';
-            dotsContainer.innerHTML = '';
-            
-            // Obtener tarjetas de productos visibles
-            const visibleProducts = Array.from(document.querySelectorAll('.product-card'))
-                .filter(card => window.getComputedStyle(card).display !== 'none');
-            
-            if (visibleProducts.length === 0) return;
-            
-            // Crear slides y dots de navegación
-            visibleProducts.forEach((product, index) => {
-                const slide = document.createElement('div');
-                slide.className = 'carousel-slide';
-                if (index === 0) slide.classList.add('active');
-                
-                const productClone = product.cloneNode(true);
-                productClone.classList.add('active');
-                slide.appendChild(productClone);
-                slideContainer.appendChild(slide);
-                
-                const dot = document.createElement('div');
-                dot.className = 'carousel-dot';
-                if (index === 0) dot.classList.add('active');
-                dot.setAttribute('data-index', index);
-                dotsContainer.appendChild(dot);
-                
-                dot.addEventListener('click', () => goToSlide(index));
-            });
-            
-            let currentSlide = 0;
-            
-            function goToSlide(index) {
-                const slides = document.querySelectorAll('.carousel-slide');
-                const dots = document.querySelectorAll('.carousel-dot');
-                
-                slides.forEach((slide, i) => {
-                    slide.classList.toggle('active', i === index);
-                });
-                
-                dots.forEach((dot, i) => {
-                    dot.classList.toggle('active', i === index);
-                });
-                
-                currentSlide = index;
-            }
-            
-            // Navegación con botones
-            prevButton.onclick = () => {
-                currentSlide = (currentSlide - 1 + visibleProducts.length) % visibleProducts.length;
-                goToSlide(currentSlide);
-            };
-            
-            nextButton.onclick = () => {
-                currentSlide = (currentSlide + 1) % visibleProducts.length;
-                goToSlide(currentSlide);
-            };
-            
-            // Navegación por deslizamiento táctil
-            let touchStartX = 0;
-            let touchEndX = 0;
-            
-            slideContainer.addEventListener('touchstart', e => {
-                touchStartX = e.changedTouches[0].screenX;
-            }, { passive: true });
-            
-            slideContainer.addEventListener('touchend', e => {
-                touchEndX = e.changedTouches[0].screenX;
-                handleSwipe();
-            }, { passive: true });
-            
-            function handleSwipe() {
-                const swipeThreshold = 50;
-                
-                if (touchEndX < touchStartX - swipeThreshold) {
-                    nextButton.click();
-                }
-                
-                if (touchEndX > touchStartX + swipeThreshold) {
-                    prevButton.click();
-                }
-            }
-        }
-        
-        // Inicializar y manejar cambios
-        resetCarousel();
-        window.addEventListener('resize', resetCarousel);
-        
-        const filterButtons = document.querySelectorAll('.filter-btn');
-        filterButtons.forEach(button => {
-            button.addEventListener('click', resetCarousel);
-        });
-    }
-    
-    // Inicializar carrusel móvil
-    initializeMobileProductCarousel();
-});
-        // Eventos de scroll y resize
+        // Eventos de scroll
         window.addEventListener('scroll', revealOnScroll);
         window.addEventListener('scroll', parallaxEffect);
-        window.addEventListener('resize', handleViewportChange);
         
         // Iniciar al cargar la página
         window.addEventListener('load', () => {
             revealOnScroll();
             parallaxEffect();
             initializeFilter();
-            handleViewportChange();
         });
     </script>
     
     <style>
-        /* Estilos específicos para la página de grupos de productos */
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            margin: 40px 0;
-        }
-        
-        .product-card {
-            background-color: white;
-            border-radius: var(--border-radius-medium);
-            overflow: hidden;
-            box-shadow: var(--box-shadow);
-            transition: var(--transition-medium);
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        
-        .product-card.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--hover-shadow);
-        }
-        
-        .product-image-container {
-            overflow: hidden;
-            height: 250px;
-        }
-        
-        .product-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        
-        .product-card:hover .product-image {
-            transform: scale(1.05);
-        }
-        
-        .product-info {
-            padding: 25px;
-        }
-        
-        .product-title {
-            color: var(--primary-dark);
-            margin-bottom: 15px;
-            font-size: 1.4rem;
-        }
-        
-        .product-description {
-            color: var(--text-color);
-            margin-bottom: 20px;
-            line-height: 1.6;
-        }
-        
-        /* Estilos para el sistema de filtrado */
+        /* Estilos anteriores se mantienen igual */
+        /* Se eliminaron los estilos específicos del carrusel */
         .filter-container {
             margin: 30px auto;
             text-align: center;
@@ -527,7 +301,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         .filter-btn:hover {
             background-color: var(--color-medium);
-            color: white;
+            color: rgb(162, 241, 193);
         }
         
         .filter-btn.active {
@@ -536,86 +310,7 @@ document.addEventListener('DOMContentLoaded', function() {
             border-color: var(--primary-color);
         }
         
-        /* Estilos para el carrusel móvil */
-        .mobile-view {
-            display: none;
-        }
-        
-        .carousel-wrapper {
-            position: relative;
-            overflow: hidden;
-            margin: 40px 0;
-        }
-        
-        .carousel-slide-container {
-            position: relative;
-            width: 100%;
-            min-height: 450px;
-        }
-        
-        .carousel-slide {
-            position: absolute;
-            width: 100%;
-            opacity: 0;
-            transition: opacity 0.5s ease;
-            display: none;
-        }
-        
-        .carousel-slide.active {
-            opacity: 1;
-            z-index: 1;
-            display: block;
-        }
-        
-        .carousel-controls {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 20px;
-        }
-        
-        .carousel-prev,
-        .carousel-next {
-            background: var(--primary-color);
-            color: white;
-            border: none;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-        
-        .carousel-prev:hover,
-        .carousel-next:hover {
-            background: var(--primary-dark);
-        }
-        
-        .carousel-dots {
-            display: flex;
-            justify-content: center;
-            margin: 0 20px;
-        }
-        
-        .carousel-dot {
-            width: 10px;
-            height: 10px;
-            background: var(--color-medium);
-            border-radius: 50%;
-            margin: 0 5px;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-        
-        .carousel-dot.active {
-            background: var(--primary-color);
-            transform: scale(1.2);
-        }
-        
-        /* Media Queries para responsividad */
+        /* Media Queries */
         @media (max-width: 992px) {
             .product-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -628,7 +323,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         @media (max-width: 768px) {
             .product-grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(1, 1fr);
                 gap: 20px;
             }
             
@@ -647,14 +342,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         @media (max-width: 576px) {
-            .desktop-view {
-                display: none;
-            }
-            
-            .mobile-view {
-                display: block;
-            }
-            
             .product-image-container {
                 height: 200px;
             }
@@ -673,58 +360,54 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     </style>
 
-
-    <footer>
-        <div class="footer-content container">
-            <div class="footer-info">
-                <h3>VERDE QUE TE QUIERO - CACTUS Y SUCULENTAS</h3>
-                <p>Cultivando belleza natural desde 2020.</p>
-                <p>Nuestro compromiso es ofrecer plantas de excelencia que superen las expectativas de los amantes de la naturaleza.</p>
-                <div class="footer-contact">
-                    <p><i class="fas fa-map-marker-alt"></i> Av. de las Plantas 123, Madrid</p>
-                    <p><i class="fas fa-phone"></i> +34 600 123 456</p>
-                    <p><i class="fas fa-envelope"></i> info@verdeqtquiero.es</p>
-                </div>
-            </div>
-            
-            <div class="footer-nav">
-                <h4>Enlaces</h4>
-                <a href="about.html">La Historia</a>
-                <a href="feedback.html">Los clientes opinan</a>
-                <a href="blog.html">Blog</a>
-                <a href="pol.html">Política de Privacidad</a>
-            </div>
-            
-            <div class="footer-social">
-                <h4>Síguenos</h4>
-                <div class="social-links">
-                    <a href="https://www.facebook.com/verde.queteqiero" target="_blank" aria-label="Facebook">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="https://www.instagram.com/verde.queteqiero" target="_blank" aria-label="Instagram">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="https://x.com/verdeqtquiero" target="_blank" aria-label="X (Twitter)">
-                        <i class="fab fa-x"></i>
-                    </a>
-                </div>
-                
-                <div class="newsletter">
-                    <h4>Suscríbete a nuestro boletín</h4>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="Tu correo electrónico" required>
-                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
-                    </form>
-                </div>
+<footer>
+    <div class="footer-content container">
+        <div class="footer-info">
+            <h3>VERDE QUE TE QUIERO - CACTUS Y SUCULENTAS</h3>
+            <p>Cultivando belleza natural desde 2020.</p>
+            <p>Nuestro compromiso es ofrecer plantas de excelencia que superen las expectativas de los amantes de la naturaleza.</p>
+            <div class="footer-contact">
+                <p><i class="fas fa-map-marker-alt"></i> Av. de las Plantas 123, Madrid</p>
+                <p><i class="fas fa-phone"></i> +34 600 123 456</p>
+                <p><i class="fas fa-envelope"></i> info@verdeqtquiero.es</p>
             </div>
         </div>
         
-        <div class="footer-bottom">
-            <p>&copy; 2025 VERDE QUE TE QUIERO - Todos los derechos reservados</p>
+        <div class="footer-nav">
+            <h4>Enlaces</h4>
+            <a href="about.html">La Historia</a>
+            <a href="feedback.html">Los clientes opinan</a>
+            <a href="blog.html">Blog</a>
+            <a href="pol.html">Política de Privacidad</a>
         </div>
-    </footer>
- <!-- colocar los scripts  -->
-
-
+        
+        <div class="footer-social">
+            <h4>Síguenos</h4>
+            <div class="social-links">
+                <a href="https://www.facebook.com/verde.queteqiero" target="_blank" aria-label="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.instagram.com/verde.queteqiero" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://x.com/verdeqtquiero" target="_blank" aria-label="X (Twitter)">
+                    <i class="fab fa-x"></i>
+                </a>
+            </div>
+            
+            <div class="newsletter">
+                <h4>Suscríbete a nuestro boletín</h4>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Tu correo electrónico" required>
+                    <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <p>&copy; 2025 VERDE QUE TE QUIERO - Todos los derechos reservados</p>
+    </div>
+</footer>
 </body>
 </html>
