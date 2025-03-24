@@ -345,7 +345,7 @@ h1.brand-name .sub-text {
 
 .carousel-text h2 {
     font-size: 3rem;
-    margin-bottom: 20px;
+    margin-bottom: 20px !important;
     opacity: 0;
     transition: opacity 1s ease 0.3s;
 }
@@ -1079,7 +1079,7 @@ footer {
     
     .carousel-text h2 {
         font-size: 1.5rem;
-        margin-bottom: 10px;
+        margin-bottom: 20px !important;
         /* Asegurar visualización en bloque */
         display: block;
     }
